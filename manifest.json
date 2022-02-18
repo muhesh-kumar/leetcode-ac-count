@@ -1,0 +1,10 @@
+{
+  "name": "LeetCode AC Count",
+  "description": "Displays total number of solved problems for each difficulty. Also includes/excludes the Locked problems as per the preferences",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "get-ac-count.js"
+  },
+  "permissions": ["tabs"]
+}
