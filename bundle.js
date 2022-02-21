@@ -87,10 +87,10 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-console.log('Read till imports!');
 setTimeout(() => {
   Counter.getACCount();
-  console.log('Read till AC Count!');
+  /********* Get Status Variables **********/
+
   const numUnlockedProblems = Counter.numUnlockedProblems.Easy + Counter.numUnlockedProblems.Medium + Counter.numUnlockedProblems.Hard;
   const numLockedProblems = Counter.numLockedProblems.Easy + Counter.numLockedProblems.Medium + Counter.numLockedProblems.Hard;
   const unlockedProblemsACCount = Counter.unlockedProblemsACCount.Easy + Counter.unlockedProblemsACCount.Medium + Counter.unlockedProblemsACCount.Hard;
@@ -115,83 +115,87 @@ setTimeout(() => {
   const combinedEasyStatus = `${easyProblemsACCount}/${numEasyProblems}`;
   const combinedMediumStatus = `${mediumProblemsACCount}/${numMediumProblems}`;
   const combinedHardStatus = `${hardProblemsACCount}/${numHardProblems}`;
+  /********* Create Status Bars **********/
+
   const p = Array.from(document.getElementsByClassName(_constants.SOLVED_COUNT_CLASS_NAME))[0];
   const acCountContainerHTML = `<div id="ac-count-container"></div>`;
   const showLockedCheckboxHTML = `
-<label class="tags-toggl__3H2x">
-<input type="checkbox" />Show locked problems
-</label>
-`;
+  <label class="tags-toggl__3H2x">
+  <input type="checkbox" />Show locked problems
+  </label>
+  `;
   const unlockedACCountHTML = `
-<div class="unlocked-ac-count-container">
-<p>
-  <span><strong>Unlocked Problems:</strong></span>
-  <span class="label label-primary round">
-    <span>${unlockedTotalStatus} Solved</span>
-  </span>
-  &nbsp;-&nbsp;
-  <span class="label label-success round">
-    <span>Easy&nbsp;${unlockedEasyStatus}</span>
-  </span>
-  &nbsp;
-  <span class="label label-warning round">
-    <span>Medium&nbsp;${unlockedMediumStatus}</span>
-  </span>
-  &nbsp;
-  <span class="label label-danger round">
-    <span> Hard&nbsp;${unlockedHardStatus}</span>
-  </span>
-</p>
-</div>
-`;
+  <div class="unlocked-ac-count-container">
+  <p>
+    <span><strong>Unlocked Problems:</strong></span>
+    <span class="label label-primary round">
+      <span>${unlockedTotalStatus} Solved</span>
+    </span>
+    &nbsp;-&nbsp;
+    <span class="label label-success round">
+      <span>Easy&nbsp;${unlockedEasyStatus}</span>
+    </span>
+    &nbsp;
+    <span class="label label-warning round">
+      <span>Medium&nbsp;${unlockedMediumStatus}</span>
+    </span>
+    &nbsp;
+    <span class="label label-danger round">
+      <span> Hard&nbsp;${unlockedHardStatus}</span>
+    </span>
+  </p>
+  </div>
+  `;
   const lockedACCountHTML = `
-<div class="locked-ac-count-container">
-<p>
-  <span><strong>Locked Problems:</strong></span>
-  <span class="label label-primary round">
-    <span>${lockedTotalStatus} Solved</span>
-  </span>
-  &nbsp;-&nbsp;
-  <span class="label label-success round">
-    <span>Easy&nbsp;${lockedEasyStatus}</span>
-  </span>
-  &nbsp;
-  <span class="label label-warning round">
-    <span>Medium&nbsp;${lockedMediumStatus}</span>
-  </span>
-  &nbsp;
-  <span class="label label-danger round">
-    <span> Hard&nbsp;${lockedHardStatus}</span>
-  </span>
-</p>
-</div>`;
+  <div class="locked-ac-count-container">
+  <p>
+    <span><strong>Locked Problems:</strong></span>
+    <span class="label label-primary round">
+      <span>${lockedTotalStatus} Solved</span>
+    </span>
+    &nbsp;-&nbsp;
+    <span class="label label-success round">
+      <span>Easy&nbsp;${lockedEasyStatus}</span>
+    </span>
+    &nbsp;
+    <span class="label label-warning round">
+      <span>Medium&nbsp;${lockedMediumStatus}</span>
+    </span>
+    &nbsp;
+    <span class="label label-danger round">
+      <span> Hard&nbsp;${lockedHardStatus}</span>
+    </span>
+  </p>
+  </div>`;
   const totalACCountHTML = `
-<div class="total-ac-count-container">
-<p>
-  <span><strong>All Problems:</strong></span>
-  <span class="label label-primary round">
-    <span>${combinedTotalStatus} Solved</span>
-  </span>
-  &nbsp;-&nbsp;
-  <span class="label label-success round">
-    <span>Easy&nbsp;${combinedEasyStatus}</span>
-  </span>
-  &nbsp;
-  <span class="label label-warning round">
-    <span>Medium&nbsp;${combinedMediumStatus}</span>
-  </span>
-  &nbsp;
-  <span class="label label-danger round">
-    <span> Hard&nbsp;${combinedHardStatus}</span>
-  </span>
-</p>
-</div>
-`;
-  console.log(`p contains ${p}`);
+  <div class="total-ac-count-container">
+  <p>
+    <span><strong>All Problems:</strong></span>
+    <span class="label label-primary round">
+      <span>${combinedTotalStatus} Solved</span>
+    </span>
+    &nbsp;-&nbsp;
+    <span class="label label-success round">
+      <span>Easy&nbsp;${combinedEasyStatus}</span>
+    </span>
+    &nbsp;
+    <span class="label label-warning round">
+      <span>Medium&nbsp;${combinedMediumStatus}</span>
+    </span>
+    &nbsp;
+    <span class="label label-danger round">
+      <span> Hard&nbsp;${combinedHardStatus}</span>
+    </span>
+  </p>
+  </div>
+  `;
+  /********* Update UI **********/
+
   p.innerText = "";
   p.insertAdjacentHTML("afterend", acCountContainerHTML);
   const acCountContainer = document.getElementById("ac-count-container");
-  acCountContainer.innerHTML += // showLockedCheckboxHTML +
+  acCountContainer.innerHTML += // TODO: Add the feature(showLockedCheckboxHTML) later
+  // showLockedCheckboxHTML +
   unlockedACCountHTML + lockedACCountHTML + totalACCountHTML;
 }, 10000);
 
