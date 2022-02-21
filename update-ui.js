@@ -1,7 +1,11 @@
 import { SOLVED_COUNT_CLASS_NAME } from "./constants.js";
 import * as Counter from "./get-ac-count.js";
 
+console.log('Read till imports!');
+
+setTimeout(() => {
 Counter.getACCount();
+console.log('Read till AC Count!');
 
 const numUnlockedProblems =
   Counter.numUnlockedProblems.Easy +
@@ -24,7 +28,8 @@ const lockedProblemsACCount =
   Counter.lockedProblemsACCount.Hard;
 
 const numCombinedProblems = numUnlockedProblems + numLockedProblems;
-const combinedProblemsACCount = unlockedProblemsACCount + lockedProblemsACCount;
+const combinedProblemsACCount =
+  unlockedProblemsACCount + lockedProblemsACCount;
 
 const numEasyProblems =
   Counter.numUnlockedProblems.Easy + Counter.numLockedProblems.Easy;
@@ -36,7 +41,8 @@ const numHardProblems =
 const easyProblemsACCount =
   Counter.unlockedProblemsACCount.Easy + Counter.lockedProblemsACCount.Easy;
 const mediumProblemsACCount =
-  Counter.unlockedProblemsACCount.Medium + Counter.lockedProblemsACCount.Medium;
+  Counter.unlockedProblemsACCount.Medium +
+  Counter.lockedProblemsACCount.Medium;
 const hardProblemsACCount =
   Counter.unlockedProblemsACCount.Hard + Counter.lockedProblemsACCount.Hard;
 
@@ -63,77 +69,79 @@ const acCountContainerHTML = `<div id="ac-count-container"></div>`;
 
 const showLockedCheckboxHTML = `
 <label class="tags-toggl__3H2x">
-  <input type="checkbox" />Show locked problems
+<input type="checkbox" />Show locked problems
 </label>
 `;
 
 const unlockedACCountHTML = `
 <div class="unlocked-ac-count-container">
-  <p>
-    <span><strong>Unlocked Problems:</strong></span>
-    <span class="label label-primary round">
-      <span>${unlockedTotalStatus} Solved</span>
-    </span>
-    &nbsp;-&nbsp;
-    <span class="label label-success round">
-      <span>Easy&nbsp;${unlockedEasyStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-warning round">
-      <span>Medium&nbsp;${unlockedMediumStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-danger round">
-      <span> Hard&nbsp;${unlockedHardStatus}</span>
-    </span>
-  </p>
+<p>
+  <span><strong>Unlocked Problems:</strong></span>
+  <span class="label label-primary round">
+    <span>${unlockedTotalStatus} Solved</span>
+  </span>
+  &nbsp;-&nbsp;
+  <span class="label label-success round">
+    <span>Easy&nbsp;${unlockedEasyStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-warning round">
+    <span>Medium&nbsp;${unlockedMediumStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-danger round">
+    <span> Hard&nbsp;${unlockedHardStatus}</span>
+  </span>
+</p>
 </div>
 `;
 
 const lockedACCountHTML = `
 <div class="locked-ac-count-container">
-  <p>
-    <span><strong>Locked Problems:</strong></span>
-    <span class="label label-primary round">
-      <span>${lockedTotalStatus} Solved</span>
-    </span>
-    &nbsp;-&nbsp;
-    <span class="label label-success round">
-      <span>Easy&nbsp;${lockedEasyStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-warning round">
-      <span>Medium&nbsp;${lockedMediumStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-danger round">
-      <span> Hard&nbsp;${lockedHardStatus}</span>
-    </span>
-  </p>
+<p>
+  <span><strong>Locked Problems:</strong></span>
+  <span class="label label-primary round">
+    <span>${lockedTotalStatus} Solved</span>
+  </span>
+  &nbsp;-&nbsp;
+  <span class="label label-success round">
+    <span>Easy&nbsp;${lockedEasyStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-warning round">
+    <span>Medium&nbsp;${lockedMediumStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-danger round">
+    <span> Hard&nbsp;${lockedHardStatus}</span>
+  </span>
+</p>
 </div>`;
 
 const totalACCountHTML = `
 <div class="total-ac-count-container">
-  <p>
-    <span><strong>All Problems:</strong></span>
-    <span class="label label-primary round">
-      <span>${combinedTotalStatus} Solved</span>
-    </span>
-    &nbsp;-&nbsp;
-    <span class="label label-success round">
-      <span>Easy&nbsp;${combinedEasyStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-warning round">
-      <span>Medium&nbsp;${combinedMediumStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-danger round">
-      <span> Hard&nbsp;${combinedHardStatus}</span>
-    </span>
-  </p>
+<p>
+  <span><strong>All Problems:</strong></span>
+  <span class="label label-primary round">
+    <span>${combinedTotalStatus} Solved</span>
+  </span>
+  &nbsp;-&nbsp;
+  <span class="label label-success round">
+    <span>Easy&nbsp;${combinedEasyStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-warning round">
+    <span>Medium&nbsp;${combinedMediumStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-danger round">
+    <span> Hard&nbsp;${combinedHardStatus}</span>
+  </span>
+</p>
 </div>
 `;
+
+console.log(`p contains ${p}`);
 
 p.innerText = "";
 p.insertAdjacentHTML("afterend", acCountContainerHTML);
@@ -141,7 +149,8 @@ p.insertAdjacentHTML("afterend", acCountContainerHTML);
 const acCountContainer = document.getElementById("ac-count-container");
 
 acCountContainer.innerHTML +=
-  showLockedCheckboxHTML +
+  // showLockedCheckboxHTML +
   unlockedACCountHTML +
   lockedACCountHTML +
   totalACCountHTML;
+}, 10000);

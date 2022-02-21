@@ -87,111 +87,112 @@ function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "functio
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-Counter.getACCount();
-console.log(Counter.numLockedProblems);
-console.log(Counter.numUnlockedProblems);
-console.log(Counter.lockedProblemsACCount);
-console.log(Counter.unlockedProblemsACCount);
-const numUnlockedProblems = Counter.numUnlockedProblems.Easy + Counter.numUnlockedProblems.Medium + Counter.numUnlockedProblems.Hard;
-const numLockedProblems = Counter.numLockedProblems.Easy + Counter.numLockedProblems.Medium + Counter.numLockedProblems.Hard;
-const unlockedProblemsACCount = Counter.unlockedProblemsACCount.Easy + Counter.unlockedProblemsACCount.Medium + Counter.unlockedProblemsACCount.Hard;
-const lockedProblemsACCount = Counter.lockedProblemsACCount.Easy + Counter.lockedProblemsACCount.Medium + Counter.lockedProblemsACCount.Hard;
-const numCombinedProblems = numUnlockedProblems + numLockedProblems;
-const combinedProblemsACCount = unlockedProblemsACCount + lockedProblemsACCount;
-const numEasyProblems = Counter.numUnlockedProblems.Easy + Counter.numLockedProblems.Easy;
-const numMediumProblems = Counter.numUnlockedProblems.Medium + Counter.numLockedProblems.Medium;
-const numHardProblems = Counter.numUnlockedProblems.Hard + Counter.numLockedProblems.Hard;
-const easyProblemsACCount = Counter.unlockedProblemsACCount.Easy + Counter.lockedProblemsACCount.Easy;
-const mediumProblemsACCount = Counter.unlockedProblemsACCount.Medium + Counter.lockedProblemsACCount.Medium;
-const hardProblemsACCount = Counter.unlockedProblemsACCount.Hard + Counter.lockedProblemsACCount.Hard;
-const unlockedTotalStatus = `${unlockedProblemsACCount}/${numUnlockedProblems}`;
-const unlockedEasyStatus = `${Counter.unlockedProblemsACCount.Easy}/${Counter.numUnlockedProblems.Easy}`;
-const unlockedMediumStatus = `${Counter.unlockedProblemsACCount.Medium}/${Counter.numUnlockedProblems.Medium}`;
-const unlockedHardStatus = `${Counter.unlockedProblemsACCount.Hard}/${Counter.numUnlockedProblems.Hard}`;
-const lockedTotalStatus = `${lockedProblemsACCount}/${numLockedProblems}`;
-const lockedEasyStatus = `${Counter.lockedProblemsACCount.Easy}/${Counter.numLockedProblems.Easy}`;
-const lockedMediumStatus = `${Counter.lockedProblemsACCount.Medium}/${Counter.numLockedProblems.Medium}`;
-const lockedHardStatus = `${Counter.lockedProblemsACCount.Hard}/${Counter.numLockedProblems.Hard}`;
-const combinedTotalStatus = `${combinedProblemsACCount}/${numCombinedProblems}`;
-const combinedEasyStatus = `${easyProblemsACCount}/${numEasyProblems}`;
-const combinedMediumStatus = `${mediumProblemsACCount}/${numMediumProblems}`;
-const combinedHardStatus = `${hardProblemsACCount}/${numHardProblems}`;
-const p = Array.from(document.getElementsByClassName(_constants.SOLVED_COUNT_CLASS_NAME))[0];
-const acCountContainerHTML = `<div id="ac-count-container"></div>`;
-const showLockedCheckboxHTML = `
+console.log('Read till imports!');
+setTimeout(() => {
+  Counter.getACCount();
+  console.log('Read till AC Count!');
+  const numUnlockedProblems = Counter.numUnlockedProblems.Easy + Counter.numUnlockedProblems.Medium + Counter.numUnlockedProblems.Hard;
+  const numLockedProblems = Counter.numLockedProblems.Easy + Counter.numLockedProblems.Medium + Counter.numLockedProblems.Hard;
+  const unlockedProblemsACCount = Counter.unlockedProblemsACCount.Easy + Counter.unlockedProblemsACCount.Medium + Counter.unlockedProblemsACCount.Hard;
+  const lockedProblemsACCount = Counter.lockedProblemsACCount.Easy + Counter.lockedProblemsACCount.Medium + Counter.lockedProblemsACCount.Hard;
+  const numCombinedProblems = numUnlockedProblems + numLockedProblems;
+  const combinedProblemsACCount = unlockedProblemsACCount + lockedProblemsACCount;
+  const numEasyProblems = Counter.numUnlockedProblems.Easy + Counter.numLockedProblems.Easy;
+  const numMediumProblems = Counter.numUnlockedProblems.Medium + Counter.numLockedProblems.Medium;
+  const numHardProblems = Counter.numUnlockedProblems.Hard + Counter.numLockedProblems.Hard;
+  const easyProblemsACCount = Counter.unlockedProblemsACCount.Easy + Counter.lockedProblemsACCount.Easy;
+  const mediumProblemsACCount = Counter.unlockedProblemsACCount.Medium + Counter.lockedProblemsACCount.Medium;
+  const hardProblemsACCount = Counter.unlockedProblemsACCount.Hard + Counter.lockedProblemsACCount.Hard;
+  const unlockedTotalStatus = `${unlockedProblemsACCount}/${numUnlockedProblems}`;
+  const unlockedEasyStatus = `${Counter.unlockedProblemsACCount.Easy}/${Counter.numUnlockedProblems.Easy}`;
+  const unlockedMediumStatus = `${Counter.unlockedProblemsACCount.Medium}/${Counter.numUnlockedProblems.Medium}`;
+  const unlockedHardStatus = `${Counter.unlockedProblemsACCount.Hard}/${Counter.numUnlockedProblems.Hard}`;
+  const lockedTotalStatus = `${lockedProblemsACCount}/${numLockedProblems}`;
+  const lockedEasyStatus = `${Counter.lockedProblemsACCount.Easy}/${Counter.numLockedProblems.Easy}`;
+  const lockedMediumStatus = `${Counter.lockedProblemsACCount.Medium}/${Counter.numLockedProblems.Medium}`;
+  const lockedHardStatus = `${Counter.lockedProblemsACCount.Hard}/${Counter.numLockedProblems.Hard}`;
+  const combinedTotalStatus = `${combinedProblemsACCount}/${numCombinedProblems}`;
+  const combinedEasyStatus = `${easyProblemsACCount}/${numEasyProblems}`;
+  const combinedMediumStatus = `${mediumProblemsACCount}/${numMediumProblems}`;
+  const combinedHardStatus = `${hardProblemsACCount}/${numHardProblems}`;
+  const p = Array.from(document.getElementsByClassName(_constants.SOLVED_COUNT_CLASS_NAME))[0];
+  const acCountContainerHTML = `<div id="ac-count-container"></div>`;
+  const showLockedCheckboxHTML = `
 <label class="tags-toggl__3H2x">
-  <input type="checkbox" />Show locked problems
+<input type="checkbox" />Show locked problems
 </label>
 `;
-const unlockedACCountHTML = `
+  const unlockedACCountHTML = `
 <div class="unlocked-ac-count-container">
-  <p>
-    <span><strong>Unlocked Problems:</strong></span>
-    <span class="label label-primary round">
-      <span>${unlockedTotalStatus} Solved</span>
-    </span>
-    &nbsp;-&nbsp;
-    <span class="label label-success round">
-      <span>Easy&nbsp;${unlockedEasyStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-warning round">
-      <span>Medium&nbsp;${unlockedMediumStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-danger round">
-      <span> Hard&nbsp;${unlockedHardStatus}</span>
-    </span>
-  </p>
+<p>
+  <span><strong>Unlocked Problems:</strong></span>
+  <span class="label label-primary round">
+    <span>${unlockedTotalStatus} Solved</span>
+  </span>
+  &nbsp;-&nbsp;
+  <span class="label label-success round">
+    <span>Easy&nbsp;${unlockedEasyStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-warning round">
+    <span>Medium&nbsp;${unlockedMediumStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-danger round">
+    <span> Hard&nbsp;${unlockedHardStatus}</span>
+  </span>
+</p>
 </div>
 `;
-const lockedACCountHTML = `
+  const lockedACCountHTML = `
 <div class="locked-ac-count-container">
-  <p>
-    <span><strong>Locked Problems:</strong></span>
-    <span class="label label-primary round">
-      <span>${lockedTotalStatus} Solved</span>
-    </span>
-    &nbsp;-&nbsp;
-    <span class="label label-success round">
-      <span>Easy&nbsp;${lockedEasyStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-warning round">
-      <span>Medium&nbsp;${lockedMediumStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-danger round">
-      <span> Hard&nbsp;${lockedHardStatus}</span>
-    </span>
-  </p>
+<p>
+  <span><strong>Locked Problems:</strong></span>
+  <span class="label label-primary round">
+    <span>${lockedTotalStatus} Solved</span>
+  </span>
+  &nbsp;-&nbsp;
+  <span class="label label-success round">
+    <span>Easy&nbsp;${lockedEasyStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-warning round">
+    <span>Medium&nbsp;${lockedMediumStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-danger round">
+    <span> Hard&nbsp;${lockedHardStatus}</span>
+  </span>
+</p>
 </div>`;
-const totalACCountHTML = `
+  const totalACCountHTML = `
 <div class="total-ac-count-container">
-  <p>
-    <span><strong>All Problems:</strong></span>
-    <span class="label label-primary round">
-      <span>${combinedTotalStatus} Solved</span>
-    </span>
-    &nbsp;-&nbsp;
-    <span class="label label-success round">
-      <span>Easy&nbsp;${combinedEasyStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-warning round">
-      <span>Medium&nbsp;${combinedMediumStatus}</span>
-    </span>
-    &nbsp;
-    <span class="label label-danger round">
-      <span> Hard&nbsp;${combinedHardStatus}</span>
-    </span>
-  </p>
+<p>
+  <span><strong>All Problems:</strong></span>
+  <span class="label label-primary round">
+    <span>${combinedTotalStatus} Solved</span>
+  </span>
+  &nbsp;-&nbsp;
+  <span class="label label-success round">
+    <span>Easy&nbsp;${combinedEasyStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-warning round">
+    <span>Medium&nbsp;${combinedMediumStatus}</span>
+  </span>
+  &nbsp;
+  <span class="label label-danger round">
+    <span> Hard&nbsp;${combinedHardStatus}</span>
+  </span>
+</p>
 </div>
 `;
-p.innerText = "";
-p.insertAdjacentHTML("afterend", acCountContainerHTML);
-const acCountContainer = document.getElementById("ac-count-container");
-console.log(acCountContainer);
-acCountContainer.innerHTML += showLockedCheckboxHTML + unlockedACCountHTML + lockedACCountHTML + totalACCountHTML;
+  console.log(`p contains ${p}`);
+  p.innerText = "";
+  p.insertAdjacentHTML("afterend", acCountContainerHTML);
+  const acCountContainer = document.getElementById("ac-count-container");
+  acCountContainer.innerHTML += // showLockedCheckboxHTML +
+  unlockedACCountHTML + lockedACCountHTML + totalACCountHTML;
+}, 10000);
 
 },{"./constants.js":1,"./get-ac-count.js":2}]},{},[3]);

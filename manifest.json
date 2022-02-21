@@ -3,8 +3,16 @@
   "description": "Displays total number of solved problems for each difficulty. Also includes/excludes the Locked problems as per the preferences",
   "version": "1.0",
   "manifest_version": 3,
-  "background": {
-    "service_worker": "get-ac-count.js"
-  },
-  "permissions": ["tabs"]
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["*://leetcode.com/tag/*"],
+      "js": ["content-script.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": ["bundle.js"],
+    "matches": ["<all_urls>"]
+  }],
+  "host_permissions": ["<all_urls>"]
 }
