@@ -8,9 +8,13 @@ A web extension that displays *solved count for each difficulty of any tag in le
 
 ![preview image](./images/preview.jpg)
 
-## Why leetcode-ac-count?
+## Why [leetcode-ac-count](https://addons.mozilla.org/en-US/firefox/addon/leetcode-ac-count/)?
 * Oftentimes when we are solving problems *topic-wise*, we want to know how many problems we have solved for each difficulty type(Easy, Medium and Hard). This is where leetcode-ac-count comes to help. It hides the default ***You have solved x/y problems.*** line and displays three lines showing how many unlocked, locked and total number of problems we have solved under the current topic(tag) we are in.
 * This information helps us not to get stuck on any single difficulty level and reminds us to move on to the next difficulty level once we have solved a certain amount of problems in the current difficulty level we are solving.
+
+## [Installation (for Mozilla Firefox)](https://addons.mozilla.org/en-US/firefox/addon/leetcode-ac-count/)
+* As of now the extension is only available in the [Firefox Browser Add Ons](https://addons.mozilla.org/en-US/firefox/addon/). But, the extension is built to support both Mozilla Firefox and Google Chrome.
+* For installing on Google Chrome, refer the below section
 
 ## Installation (from source)
 
@@ -50,6 +54,9 @@ git clone https://github.com/muhesh-kumar/leetcode-ac-count.git
 > ***NOTE***: 
 > Updates will be visible only after refreshing the page.
 > The extension works on both of the old and new UI of LeetCode.
+
+## Possible issues
+* As of now, the maximum wait time of the extension to display the solved count stats is 10 seconds. However, if you have a slow network connection or the page load itself took more than 10 seconds to load, the extension won't display the solved count stats. In that case, refresh the page again and wait for the extension to load(fixes for such issues might be made in the future)
 
 ## For Developers
 
