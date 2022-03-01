@@ -26,7 +26,8 @@ const isLocked = node => {
 };
 
 const isSolved = parentTR => {
-  return parentTR.childNodes[0].childElementCount == 1;
+  const attributeValue = parentTR.childNodes[0].getAttribute("value");
+  return attributeValue === "ac";
 };
 
 const getDifficulty = parentTR => {
