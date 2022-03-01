@@ -8,12 +8,25 @@ A web extension which displays *solved count for each difficutly of any tag in l
 
 ![preview image](./images/preview.jpg)
 
-## Installation
+## Why leetcode-ac-count?
+* Oftentimes when we are solving problems *topic-wise*, we want to know how many problems we have solved for each difficulty type(Easy, Medium and Hard). This is where leetcode-ac-count comes to help. It hides the default ***You have solved x/y problems.*** line and displays three lines showing how many unlocked, locked and total number of problems we have solved under the current topic(tag) we are in.
+* This information helps us not to get stuck on any single difficulty level and reminds us to move on to the next difficulty level once we have solved a certain amount of problems in the current difficulty level we are solving.
 
-### Install from source
+## Installation (from source)
+
+1. Go to a location where you wish to save this repository
 ```bash
 cd preferred_directory
-git clone <repo_name>
+```
+
+2. Clone the repository
+```bash
+git clone git@github.com:muhesh-kumar/leetcode-ac-count.git
+```
+<p align="center"><strong>(or)</strong></p>
+
+```bash
+git clone https://github.com/muhesh-kumar/leetcode-ac-count.git
 ```
 
 ### Install on Google Chrome
@@ -34,10 +47,18 @@ git clone <repo_name>
 1. Click on any problem tag in leetcode.com/problemset/all
 2. After the tag's page(for example: leetcode.com/tag/stack) loads, the solved count status will be displayed within 10 seconds.
 
-> ***NOTE***: Updates will be visible only after refreshing the page.
+> ***NOTE***: 
+> Updates will be visible only after refreshing the page.
+> The extension works on both of the old and new UI of LeetCode.
 
-**Development Environment:** 
-Windows 11 with WSL 1.0
+## For Developers
 
-**Build Script:** npm run start
+### Development Environment: 
+* Operating System: Windows 11, WSL 1
+* node: v16.14.0
+* npm: 6.13.7
 
+### Build Script
+```bash
+npm run start
+```
