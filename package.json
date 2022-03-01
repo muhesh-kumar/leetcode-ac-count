@@ -8,7 +8,7 @@
     "start": "npx browserify -p esmify update-ui.js -o bundle.js"
   },
   "author": "Muhesh Kumar",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "babelify": "^10.0.0",

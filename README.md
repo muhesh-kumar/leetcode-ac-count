@@ -4,7 +4,7 @@
   <img src="./icons/icon128.png" width="45px" height="40px"
 </p>
 
-A web extension which displays *solved count for each difficutly of any tag in leetcode.com*
+A web extension that displays *solved count for each difficulty of any tag in leetcode.com*
 
 ![preview image](./images/preview.jpg)
 
