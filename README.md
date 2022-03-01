@@ -60,5 +60,6 @@ git clone https://github.com/muhesh-kumar/leetcode-ac-count.git
 
 ### Build Script
 ```bash
-npm run start
+npm install # to install dev dependencies
+npm run start # to bundle the source files into bundle.js
 ```
