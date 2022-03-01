@@ -53,7 +53,7 @@ git clone https://github.com/muhesh-kumar/leetcode-ac-count.git
 
 ## For Developers
 
-### Development Environment: 
+### Development Environment
 * Operating System: Windows 11, WSL 1
 * node: v16.14.0
 * npm: 6.13.7
