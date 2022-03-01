@@ -60,6 +60,7 @@ git clone https://github.com/muhesh-kumar/leetcode-ac-count.git
 
 ### Build Script
 ```bash
+rm package-lock.json && npm i # if the next line doesn't work, run this line and again run the following lines
 npm install # to install dev dependencies
 npm run start # to bundle the source files into bundle.js
 ```
