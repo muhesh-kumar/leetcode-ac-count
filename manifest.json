@@ -1,7 +1,7 @@
 {
   "name": "LeetCode AC Count",
   "description": "Displays total number of solved problems for each difficulty. Also includes/excludes the Locked problems as per the preferences",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "icons": {
     "128": "./icons/icon128.png"
