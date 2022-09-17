@@ -1,7 +1,7 @@
-import { SOLVED_COUNT_CLASS_NAME } from "./constants.js";
-import * as Counter from "./get-ac-count.js";
+import { SOLVED_COUNT_CLASS_NAME } from './constants.js';
+import * as Counter from './get-ac-count.js';
 
-setTimeout(() => {
+document.addEventListener('DOMContentLoaded', () => {
   Counter.getACCount();
 
   /********* Get Status Variables **********/
@@ -141,15 +141,13 @@ setTimeout(() => {
   `;
 
   /********* Update UI **********/
-  p.innerText = "";
-  p.insertAdjacentHTML("afterend", acCountContainerHTML);
+  p.innerText = '';
+  p.insertAdjacentHTML('afterend', acCountContainerHTML);
 
-  const acCountContainer = document.getElementById("ac-count-container");
+  const acCountContainer = document.getElementById('ac-count-container');
 
   acCountContainer.innerHTML +=
     // TODO: Add the feature(showLockedCheckboxHTML) later
     // showLockedCheckboxHTML +
-    unlockedACCountHTML +
-    lockedACCountHTML +
-    totalACCountHTML;
-}, 10000);
+    unlockedACCountHTML + lockedACCountHTML + totalACCountHTML;
+});
