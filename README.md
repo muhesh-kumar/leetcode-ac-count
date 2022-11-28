@@ -67,6 +67,18 @@ git clone https://github.com/muhesh-kumar/leetcode-ac-count.git
 
 - As of now, the maximum wait time of the extension to display the solved count stats is 10 seconds. However, if you have a slow network connection or the page load itself took more than 10 seconds to load, the extension won't display the solved count stats. In that case, refresh the page again and wait for the extension to load(fixes for such issues might be made in the future)
 
+## Problems Faced
+* Error: "This extension includes the key file ./node_modules/public-encrypt/test/test_key.pem. You probably don't want to do that."
+  - Removed node_modules/public-encrypt directory
+
+* The script gets injected before page loads completely, hence raising the error: cannot set properties of undefined
+  - Wrapped the whole logic inside a setTimeout() function with 5 seconds as the waiting time
+  - Right now it solves the problem but what happens if the page itself taks more than 10 seconds to load?
+  - Is there a way to make this happen instantly after the page loads?
+
+* Couldn't register as a chrome web store developer as there were some issues with the payment of one time registration fee
+  - So, published it as a firefox add on
+
 ## For Developers
 
 ### Development Environment
